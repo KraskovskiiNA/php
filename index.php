@@ -1,60 +1,101 @@
- <!-- Ex №4  -->
-<?php
-$tit = Shop;
-$head = Hello;
-$year = date("Y");
-?> 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?="$tit"?></title>
+    <title>2</title>
 </head>
-<body>
 
-<h1><?="$head"?></h1>
+<?php 
 
- <!-- Ex №2  -->
-<?php
-    $int10 = 42;
-    $int2 = 0b101010;
-    $int8 = 052;
-    $int16 = 0x2A;
-    echo "Десятеричная система $int10 <br>"; // 42
-    echo "Двоичная система $int2 <br>"; // 42
-    echo "Восьмеричная система $int8 <br>";  //42
-    echo "Шестнадцатеричная система $int16 <br>"; //42
+$a = rand(-10,10);
+$b = rand(-10,10);
 
-    $precise1 = 1.5;
-    $precise2 = 1.5e4; 
-    $precise3 = 6E-8; 
-    echo "$precise1 | $precise2 | $precise3 <br>"; // 1.5 / 15000 / 0.00000006
+// Ex 1
 
-    $a = 1;
-    echo "$a"; // выведет значение переменной = 1
-    echo '$a <br>'; // выведет имя переменной $a
+if($a >= 0 && $b >= 0) echo "$a" - "$b";
+if($a < 0 && $b < 0) echo "$a" * "$b";
+if($a < 0 XOR $b < 0) echo "$a" + "$b";
+
+// Ex 2
+
+$c = rand(0,15);
+switch ($c) {
+    case 1:
+        echo $c++;
+    case 2:
+        echo $c++;
+    case 3:
+        echo $c++;
+    case 4:
+        echo $c++;
+    case 5:
+        echo $c++;
+    case 6:
+        echo $c++;
+    case 7:
+        echo $c++;
+    case 8:
+        echo $c++;
+    case 9:
+        echo $c++;
+    case 10:
+        echo $c++;
+    case 11:
+        echo $c++;
+    case 12:
+        echo $c++;
+    case 13:
+        echo $c++;
+    case 14:
+        echo $c++;
+    case 15:
+        echo $c;
+                
+}
+
+// Ex 3
+
+function sum($A, $B){
+    return $A + $B;
+}
+function sub($A, $B){
+    return $A - $B;
+}
+function divi($A, $B){
+    return $A / $B;
+}
+function mul($A, $B){
+    return $A * $B;
+}
+
+// Ex 4
+
+function mathOperation($arg1, $arg2, $operation){
+    switch($operation){
+        case 'sum':
+            return sum($arg1,$arg2);
+        break;
+        case 'sub':
+            return sub($arg1,$arg2);
+        break;
+        case 'divi':
+            return divi($arg1,$arg2);
+        break;
+        case 'mul':
+            return mul($arg1,$arg2);
+        break;
+    }
+}
+
+echo mathOperation($a,$b,sub);
+
+// Ex 5
+
+$foo = str_replace('{{FOOTER}}', date(Y), file_get_contents('index.html'));
+
 ?>
-
- <!-- Ex №3  -->
-<?php
-    $a = 5;
-    $b = '05';
-    var_dump($a == $b); // Почему true? - Сравниваются числа 5 и 05
-    var_dump((int)'012345'); // Почему 12345? - Происходит явное приведение к числу в десятичной системе счисления.
-    var_dump((float)123.0 === (int)123.0); // Почему false? - Разные типы данных
-    var_dump((int)0 === (int)'hello, world'); // Почему true? - При приведении строки (с отсутствием цифр) к числу получается 0. Ноль равен по значению и типу нулю.
-?>
-
- <!-- Ex №5  -->
-<?php
-$i = 1;
-$d = 2;
-$i= $i + $d - ($d = $i); // $i = 2; $d = 1;
-?>
-
-
-<p><?="$year"?> year</p>
-
 </body>
+
 </html>
